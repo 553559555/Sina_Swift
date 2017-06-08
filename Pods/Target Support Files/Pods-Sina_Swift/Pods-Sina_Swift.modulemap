@@ -1,0 +1,6 @@
+framework module Pods_Sina_Swift {
+  umbrella header "Pods-Sina_Swift-umbrella.h"
+
+  export *
+  module * { export * }
+}
