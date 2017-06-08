@@ -9,23 +9,39 @@
 /* Begin PBXBuildFile section */
 		6BF0FB29919D89A1668DD3DD /* Pods_Sina_Swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 988CDEC6DBF92BEBE7EC726F /* Pods_Sina_Swift.framework */; };
 		7617649B1EE93E5D00BA2CEF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7617649A1EE93E5D00BA2CEF /* AppDelegate.swift */; };
-		7617649D1EE93E5D00BA2CEF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7617649C1EE93E5D00BA2CEF /* ViewController.swift */; };
 		761764A01EE93E5D00BA2CEF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7617649E1EE93E5D00BA2CEF /* Main.storyboard */; };
 		761764A31EE93E5D00BA2CEF /* Sina_Swift.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 761764A11EE93E5D00BA2CEF /* Sina_Swift.xcdatamodeld */; };
 		761764A51EE93E5D00BA2CEF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 761764A41EE93E5D00BA2CEF /* Assets.xcassets */; };
 		761764A81EE93E5D00BA2CEF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 761764A61EE93E5D00BA2CEF /* LaunchScreen.storyboard */; };
+		761764B61EE94B2000BA2CEF /* BYLoadingTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761764B01EE94B2000BA2CEF /* BYLoadingTool.swift */; };
+		761764B71EE94B2000BA2CEF /* BYNetRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761764B11EE94B2000BA2CEF /* BYNetRequest.swift */; };
+		761764B81EE94B2000BA2CEF /* BYTopImageBottomTitleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761764B21EE94B2000BA2CEF /* BYTopImageBottomTitleButton.swift */; };
+		761764B91EE94B2000BA2CEF /* BYUserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761764B31EE94B2000BA2CEF /* BYUserInfo.swift */; };
+		761764BA1EE94B2000BA2CEF /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761764B41EE94B2000BA2CEF /* Category.swift */; };
+		761764BB1EE94B2000BA2CEF /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761764B51EE94B2000BA2CEF /* Common.swift */; };
+		761764C01EE94B9600BA2CEF /* WZLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761764BF1EE94B9600BA2CEF /* WZLoginViewController.swift */; };
+		761764C21EE951E900BA2CEF /* WZHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761764C11EE951E900BA2CEF /* WZHomeViewController.swift */; };
+		761764C41EE9543100BA2CEF /* WZUserAcessToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761764C31EE9543100BA2CEF /* WZUserAcessToken.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		299A9AA7D7388F0CBBE2B3D1 /* Pods-Sina_Swift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sina_Swift.release.xcconfig"; path = "Pods/Target Support Files/Pods-Sina_Swift/Pods-Sina_Swift.release.xcconfig"; sourceTree = "<group>"; };
 		761764971EE93E5D00BA2CEF /* Sina_Swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sina_Swift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7617649A1EE93E5D00BA2CEF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		7617649C1EE93E5D00BA2CEF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		7617649F1EE93E5D00BA2CEF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		761764A21EE93E5D00BA2CEF /* Sina_Swift.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Sina_Swift.xcdatamodel; sourceTree = "<group>"; };
 		761764A41EE93E5D00BA2CEF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		761764A71EE93E5D00BA2CEF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		761764A91EE93E5D00BA2CEF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		761764B01EE94B2000BA2CEF /* BYLoadingTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BYLoadingTool.swift; sourceTree = "<group>"; };
+		761764B11EE94B2000BA2CEF /* BYNetRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BYNetRequest.swift; sourceTree = "<group>"; };
+		761764B21EE94B2000BA2CEF /* BYTopImageBottomTitleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BYTopImageBottomTitleButton.swift; sourceTree = "<group>"; };
+		761764B31EE94B2000BA2CEF /* BYUserInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BYUserInfo.swift; sourceTree = "<group>"; };
+		761764B41EE94B2000BA2CEF /* Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		761764B51EE94B2000BA2CEF /* Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
+		761764BF1EE94B9600BA2CEF /* WZLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WZLoginViewController.swift; sourceTree = "<group>"; };
+		761764C11EE951E900BA2CEF /* WZHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WZHomeViewController.swift; sourceTree = "<group>"; };
+		761764C31EE9543100BA2CEF /* WZUserAcessToken.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WZUserAcessToken.swift; sourceTree = "<group>"; };
 		988CDEC6DBF92BEBE7EC726F /* Pods_Sina_Swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Sina_Swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9C7616B93C66E20A143B91F /* Pods-Sina_Swift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sina_Swift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Sina_Swift/Pods-Sina_Swift.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -63,8 +79,11 @@
 		761764991EE93E5D00BA2CEF /* Sina_Swift */ = {
 			isa = PBXGroup;
 			children = (
+				761764BC1EE94B6D00BA2CEF /* Controllers */,
+				761764BD1EE94B6D00BA2CEF /* Models */,
+				761764BE1EE94B6D00BA2CEF /* Views */,
+				761764AF1EE94B2000BA2CEF /* Tools */,
 				7617649A1EE93E5D00BA2CEF /* AppDelegate.swift */,
-				7617649C1EE93E5D00BA2CEF /* ViewController.swift */,
 				7617649E1EE93E5D00BA2CEF /* Main.storyboard */,
 				761764A41EE93E5D00BA2CEF /* Assets.xcassets */,
 				761764A61EE93E5D00BA2CEF /* LaunchScreen.storyboard */,
@@ -72,6 +91,43 @@
 				761764A11EE93E5D00BA2CEF /* Sina_Swift.xcdatamodeld */,
 			);
 			path = Sina_Swift;
+			sourceTree = "<group>";
+		};
+		761764AF1EE94B2000BA2CEF /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				761764B01EE94B2000BA2CEF /* BYLoadingTool.swift */,
+				761764B11EE94B2000BA2CEF /* BYNetRequest.swift */,
+				761764B21EE94B2000BA2CEF /* BYTopImageBottomTitleButton.swift */,
+				761764B31EE94B2000BA2CEF /* BYUserInfo.swift */,
+				761764B41EE94B2000BA2CEF /* Category.swift */,
+				761764B51EE94B2000BA2CEF /* Common.swift */,
+				761764C31EE9543100BA2CEF /* WZUserAcessToken.swift */,
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
+		761764BC1EE94B6D00BA2CEF /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				761764BF1EE94B9600BA2CEF /* WZLoginViewController.swift */,
+				761764C11EE951E900BA2CEF /* WZHomeViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		761764BD1EE94B6D00BA2CEF /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		761764BE1EE94B6D00BA2CEF /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		9BE5DFD3CFDC155079A1810C /* Pods */ = {
@@ -120,6 +176,7 @@
 		7617648F1EE93E5D00BA2CEF /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = WZ;
 				LastSwiftUpdateCheck = 0830;
 				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = Arther;
@@ -215,9 +272,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7617649D1EE93E5D00BA2CEF /* ViewController.swift in Sources */,
+				761764C21EE951E900BA2CEF /* WZHomeViewController.swift in Sources */,
+				761764B71EE94B2000BA2CEF /* BYNetRequest.swift in Sources */,
+				761764B91EE94B2000BA2CEF /* BYUserInfo.swift in Sources */,
+				761764C01EE94B9600BA2CEF /* WZLoginViewController.swift in Sources */,
+				761764B61EE94B2000BA2CEF /* BYLoadingTool.swift in Sources */,
+				761764BB1EE94B2000BA2CEF /* Common.swift in Sources */,
 				7617649B1EE93E5D00BA2CEF /* AppDelegate.swift in Sources */,
+				761764B81EE94B2000BA2CEF /* BYTopImageBottomTitleButton.swift in Sources */,
 				761764A31EE93E5D00BA2CEF /* Sina_Swift.xcdatamodeld in Sources */,
+				761764BA1EE94B2000BA2CEF /* Category.swift in Sources */,
+				761764C41EE9543100BA2CEF /* WZUserAcessToken.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -343,6 +408,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = ZVAE795T6V;
 				INFOPLIST_FILE = Sina_Swift/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.github.553559555.Sina-Swift";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -357,6 +423,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = ZVAE795T6V;
 				INFOPLIST_FILE = Sina_Swift/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.github.553559555.Sina-Swift";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -383,6 +450,7 @@
 				761764AE1EE93E5D00BA2CEF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
