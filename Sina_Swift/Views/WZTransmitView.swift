@@ -35,6 +35,7 @@ class WZTransmitView: UIView {
                     }
                 }
             })
+            
             self.layoutIfNeeded()
             picView?.picArray = model?.pic
         }
@@ -61,7 +62,6 @@ class WZTransmitView: UIView {
         flowLayout?.minimumLineSpacing = margin
         flowLayout?.minimumInteritemSpacing = margin
         picView = WZPicCollectionView(frame: .zero, collectionViewLayout: flowLayout!)
-        picView?.backgroundColor = UIColor.green
         addSubview(picView!)
     }
     

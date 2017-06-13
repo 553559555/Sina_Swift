@@ -67,11 +67,11 @@ class WZHomeViewController: UIViewController,UITableViewDelegate,UITableViewData
             self.dataArray = tempArray
             self.tableView?.reloadData()
             
-            let time: TimeInterval = 3.0
-            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + time) {
-                //code
-                self.tableView?.reloadData()
-            }
+//            let time: TimeInterval = 3.0
+//            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + time) {
+//                //code
+//                self.tableView?.reloadData()
+//            }
         }) { (error) in
             print(error)
         }

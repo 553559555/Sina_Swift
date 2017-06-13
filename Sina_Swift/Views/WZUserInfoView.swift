@@ -21,7 +21,7 @@ class WZUserInfoView: UIView {
     public var model : WZHomeModel? {
         didSet {
             name?.text = model?.name
-            icon?.kf.setImage(with: URL(string: (model?.icon)!))
+            icon?.kf.setImage(with: URL(string: (model?.icon)!), placeholder: #imageLiteral(resourceName: "defult"), options: nil, progressBlock: nil, completionHandler: nil)
             time?.text = model?.time
             text?.text = model?.text
         }

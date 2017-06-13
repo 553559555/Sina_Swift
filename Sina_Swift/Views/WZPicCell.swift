@@ -14,7 +14,7 @@ class WZPicCell: UICollectionViewCell {
     private var image : UIImageView?
     public var url : String? {
         didSet {
-            image?.kf.setImage(with: URL(string: (url)!))
+            image?.kf.setImage(with: URL(string: (url)!), placeholder: #imageLiteral(resourceName: "defult"), options: nil, progressBlock: nil, completionHandler: nil)
         }
     }
     

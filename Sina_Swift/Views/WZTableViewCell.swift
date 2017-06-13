@@ -82,7 +82,6 @@ class WZTableViewCell: UITableViewCell {
         flowLayout?.minimumLineSpacing = margin
         flowLayout?.minimumInteritemSpacing = margin
         picView = WZPicCollectionView(frame: .zero, collectionViewLayout: flowLayout!)
-        picView?.backgroundColor = UIColor.green
         contentView.addSubview(picView!)
         
         transmitView = WZTransmitView()
