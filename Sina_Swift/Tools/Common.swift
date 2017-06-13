@@ -19,10 +19,12 @@ let SCREEN_HEIGHT = UIScreen.main.bounds.height
 
 let GET_USER_TOKEN = "https://api.weibo.com/oauth2/authorize"
 let GET_ACCESS_TOKEN = "https://api.weibo.com/oauth2/access_token"
+let GET_NEW_LAST = "https://api.weibo.com/2/statuses/home_timeline.json"
 
 let APPKEY = "3356906810"
 let REDIRECT_URL = "http://www.baidu.com"
 let APP_SECRET = "f30501fded29138e7fc79d21c394feea"
+
 
 //颜色
 let LINECOLOR = UIColor.colorWithHexString(hex: "e0e0e0")

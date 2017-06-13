@@ -44,9 +44,9 @@ class BYNetRequest: NSObject {
      * grant_type : token
      */
     
-    public func getAccessToken(grant_type: String, SuccessBlock:@escaping ((_ success :[String: Any])->Void),ErrorBlock:@escaping ((_ error: HTTPURLResponse)->Void)) {
+    public func getAccessToken(code: String, SuccessBlock:@escaping ((_ success :[String: Any])->Void),ErrorBlock:@escaping ((_ error: HTTPURLResponse)->Void)) {
         
-        let parameter = ["client_id": APPKEY, "client_secret": APP_SECRET, "grant_tyoe": grant_type]
+        let parameter = ["client_id": APPKEY, "client_secret": APP_SECRET, "grant_tyoe": "authorization_code", "code": code, "redirect_uri": REDIRECT_URL];
         
         Alamofire.request("\(GET_ACCESS_TOKEN)", method: .post, parameters: parameter).responseJSON { response in
             if let JSON = response.result.value {
@@ -60,6 +60,26 @@ class BYNetRequest: NSObject {
                 
             }
         }
+    }
+    
+    public func getNewList(access_token: String, page: Int, SuccessBlock:@escaping ((_ success : [String : Any])-> Void), ErrorBlock:@escaping ((_ error : HTTPURLResponse)->Void)) {
+        
+        let paramter = ["access_token" : access_token, "count" : "\(10)", "page" : "\(page)"];
+        
+        Alamofire.request(GET_NEW_LAST, method: .get, parameters: paramter).responseJSON { response in
+            if let JSON = response.result.value {
+                let a = JSON as? [String: Any]
+                SuccessBlock(a!)
+            } else {
+                BYLoadingTool.shared.showText(str: "网络请求超时", currentView: ((UIApplication.shared.delegate?.window)!)!)
+                if let error = response.response {
+                    ErrorBlock(error)
+                }
+                
+            }
+        }
+
+        
     }
     
     

@@ -17,8 +17,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         window = UIWindow()
+        let homeVC = WZHomeViewController()
         let loginVC = WZLoginViewController()
-        window?.rootViewController = UINavigationController(rootViewController: loginVC);
+        if (UserDefaults.standard.object(forKey: "access_token") != nil) {
+            let dict = ["access_token" : UserDefaults.standard.object(forKey: "access_token"),
+                        "expires_in"   : UserDefaults.standard.object(forKey: "expires_in"),
+                        "remind_in"    : UserDefaults.standard.object(forKey: "remind_in"),
+                        "uid"          : UserDefaults.standard.object(forKey: "uid")]
+            WZUserAcessToken.shared.saveInfo(dict: dict)
+            window?.rootViewController = UINavigationController(rootViewController: homeVC);
+        } else {
+            window?.rootViewController = UINavigationController(rootViewController: loginVC);
+        }
         window?.makeKeyAndVisible()
         return true
     }

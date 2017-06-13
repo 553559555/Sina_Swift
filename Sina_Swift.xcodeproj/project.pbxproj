@@ -16,12 +16,17 @@
 		761764B61EE94B2000BA2CEF /* BYLoadingTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761764B01EE94B2000BA2CEF /* BYLoadingTool.swift */; };
 		761764B71EE94B2000BA2CEF /* BYNetRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761764B11EE94B2000BA2CEF /* BYNetRequest.swift */; };
 		761764B81EE94B2000BA2CEF /* BYTopImageBottomTitleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761764B21EE94B2000BA2CEF /* BYTopImageBottomTitleButton.swift */; };
-		761764B91EE94B2000BA2CEF /* BYUserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761764B31EE94B2000BA2CEF /* BYUserInfo.swift */; };
 		761764BA1EE94B2000BA2CEF /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761764B41EE94B2000BA2CEF /* Category.swift */; };
 		761764BB1EE94B2000BA2CEF /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761764B51EE94B2000BA2CEF /* Common.swift */; };
 		761764C01EE94B9600BA2CEF /* WZLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761764BF1EE94B9600BA2CEF /* WZLoginViewController.swift */; };
 		761764C21EE951E900BA2CEF /* WZHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761764C11EE951E900BA2CEF /* WZHomeViewController.swift */; };
 		761764C41EE9543100BA2CEF /* WZUserAcessToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761764C31EE9543100BA2CEF /* WZUserAcessToken.swift */; };
+		76B464C81EEAA077007EC53E /* WZUserInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76B464C71EEAA077007EC53E /* WZUserInfoView.swift */; };
+		76B5DA281EEE6B23003DA2DF /* WZTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76B5DA271EEE6B23003DA2DF /* WZTableViewCell.swift */; };
+		76B5DA2A1EEE9255003DA2DF /* WZHomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76B5DA291EEE9255003DA2DF /* WZHomeModel.swift */; };
+		76B5DA2C1EEF7CDB003DA2DF /* WZPicCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76B5DA2B1EEF7CDB003DA2DF /* WZPicCollectionView.swift */; };
+		76B5DA2E1EEF9B99003DA2DF /* WZPicCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76B5DA2D1EEF9B99003DA2DF /* WZPicCell.swift */; };
+		76B5DA301EEFB970003DA2DF /* WZTransmitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76B5DA2F1EEFB970003DA2DF /* WZTransmitView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,12 +41,17 @@
 		761764B01EE94B2000BA2CEF /* BYLoadingTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BYLoadingTool.swift; sourceTree = "<group>"; };
 		761764B11EE94B2000BA2CEF /* BYNetRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BYNetRequest.swift; sourceTree = "<group>"; };
 		761764B21EE94B2000BA2CEF /* BYTopImageBottomTitleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BYTopImageBottomTitleButton.swift; sourceTree = "<group>"; };
-		761764B31EE94B2000BA2CEF /* BYUserInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BYUserInfo.swift; sourceTree = "<group>"; };
 		761764B41EE94B2000BA2CEF /* Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		761764B51EE94B2000BA2CEF /* Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
 		761764BF1EE94B9600BA2CEF /* WZLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WZLoginViewController.swift; sourceTree = "<group>"; };
 		761764C11EE951E900BA2CEF /* WZHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WZHomeViewController.swift; sourceTree = "<group>"; };
 		761764C31EE9543100BA2CEF /* WZUserAcessToken.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WZUserAcessToken.swift; sourceTree = "<group>"; };
+		76B464C71EEAA077007EC53E /* WZUserInfoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WZUserInfoView.swift; sourceTree = "<group>"; };
+		76B5DA271EEE6B23003DA2DF /* WZTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WZTableViewCell.swift; sourceTree = "<group>"; };
+		76B5DA291EEE9255003DA2DF /* WZHomeModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WZHomeModel.swift; sourceTree = "<group>"; };
+		76B5DA2B1EEF7CDB003DA2DF /* WZPicCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WZPicCollectionView.swift; sourceTree = "<group>"; };
+		76B5DA2D1EEF9B99003DA2DF /* WZPicCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WZPicCell.swift; sourceTree = "<group>"; };
+		76B5DA2F1EEFB970003DA2DF /* WZTransmitView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WZTransmitView.swift; sourceTree = "<group>"; };
 		988CDEC6DBF92BEBE7EC726F /* Pods_Sina_Swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Sina_Swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9C7616B93C66E20A143B91F /* Pods-Sina_Swift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sina_Swift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Sina_Swift/Pods-Sina_Swift.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -99,7 +109,6 @@
 				761764B01EE94B2000BA2CEF /* BYLoadingTool.swift */,
 				761764B11EE94B2000BA2CEF /* BYNetRequest.swift */,
 				761764B21EE94B2000BA2CEF /* BYTopImageBottomTitleButton.swift */,
-				761764B31EE94B2000BA2CEF /* BYUserInfo.swift */,
 				761764B41EE94B2000BA2CEF /* Category.swift */,
 				761764B51EE94B2000BA2CEF /* Common.swift */,
 				761764C31EE9543100BA2CEF /* WZUserAcessToken.swift */,
@@ -119,6 +128,7 @@
 		761764BD1EE94B6D00BA2CEF /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				76B5DA291EEE9255003DA2DF /* WZHomeModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -126,6 +136,11 @@
 		761764BE1EE94B6D00BA2CEF /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				76B464C71EEAA077007EC53E /* WZUserInfoView.swift */,
+				76B5DA271EEE6B23003DA2DF /* WZTableViewCell.swift */,
+				76B5DA2B1EEF7CDB003DA2DF /* WZPicCollectionView.swift */,
+				76B5DA2D1EEF9B99003DA2DF /* WZPicCell.swift */,
+				76B5DA2F1EEFB970003DA2DF /* WZTransmitView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -272,17 +287,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				76B5DA2E1EEF9B99003DA2DF /* WZPicCell.swift in Sources */,
 				761764C21EE951E900BA2CEF /* WZHomeViewController.swift in Sources */,
 				761764B71EE94B2000BA2CEF /* BYNetRequest.swift in Sources */,
-				761764B91EE94B2000BA2CEF /* BYUserInfo.swift in Sources */,
 				761764C01EE94B9600BA2CEF /* WZLoginViewController.swift in Sources */,
 				761764B61EE94B2000BA2CEF /* BYLoadingTool.swift in Sources */,
 				761764BB1EE94B2000BA2CEF /* Common.swift in Sources */,
 				7617649B1EE93E5D00BA2CEF /* AppDelegate.swift in Sources */,
+				76B5DA2A1EEE9255003DA2DF /* WZHomeModel.swift in Sources */,
 				761764B81EE94B2000BA2CEF /* BYTopImageBottomTitleButton.swift in Sources */,
+				76B5DA2C1EEF7CDB003DA2DF /* WZPicCollectionView.swift in Sources */,
 				761764A31EE93E5D00BA2CEF /* Sina_Swift.xcdatamodeld in Sources */,
+				76B5DA281EEE6B23003DA2DF /* WZTableViewCell.swift in Sources */,
 				761764BA1EE94B2000BA2CEF /* Category.swift in Sources */,
+				76B5DA301EEFB970003DA2DF /* WZTransmitView.swift in Sources */,
 				761764C41EE9543100BA2CEF /* WZUserAcessToken.swift in Sources */,
+				76B464C81EEAA077007EC53E /* WZUserInfoView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

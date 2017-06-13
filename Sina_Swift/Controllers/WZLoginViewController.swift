@@ -31,15 +31,15 @@ class WZLoginViewController: UIViewController,UIWebViewDelegate {
         let url = request.url?.absoluteString
         if url?.components(separatedBy: "http://www.baidu.com/?code=").count == 2 {
             let array = url?.components(separatedBy: "http://www.baidu.com/?code=")
-            BYUserInfo.shared.saveToken(token: (array?[1])!)
-//            self.navigationController?.pushViewController(WZHomeViewController(), animated: true)
-            BYNetRequest.shared.getAccessToken(grant_type: BYUserInfo.shared.token!, SuccessBlock: { (dict) in
-                print(dict);
+            WZUserAcessToken.shared.saveToken(token: (array?[1])!)
+            BYNetRequest.shared.getAccessToken(code: WZUserAcessToken.shared.token!, SuccessBlock: { (dict) in
+                WZUserAcessToken.shared.saveInfo(dict: dict)
+                WZUserAcessToken.shared.saveInfoToLocal(dict: dict)
+                self.navigationController?.pushViewController(WZHomeViewController(), animated: true)
             }, ErrorBlock: { (error) in
-                
+                print(error);
             })
         }
-        
         return true
     }
     
