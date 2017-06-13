@@ -12,10 +12,6 @@ class WZHomeViewController: UIViewController,UITableViewDelegate,UITableViewData
     
     private var page: Int?
     private var tableView: UITableView?
-    private var dateStr: [String] = {
-        let strArray = ["全球最大的笑话发布中心，笑话 - 糗事 - 雷事 - 囧事- 星级笑话 ,让你每日笑不停 合作联系QQ2894247217","全球最大的笑话发布中心，笑话 - 糗事 - 雷事 - 囧事- 星级笑话 ,让你每日笑不停 合作联系QQ2894247217","全球最大的笑话发布中心，笑话 - 糗事 - 雷事 - 囧事- 星级笑话 ,让你每日笑不停 合作联系QQ2894247217","全球最大的笑话发布中心，笑话 - 糗事 - 雷事 - 囧事- 星级笑话 ,让你每日笑不停 合作联系QQ2894247217","全球最大的笑话发布中心，笑话 - 糗事 - 雷事 - 囧事- 星级笑话 ,让你每日笑不停 合作联系QQ2894247217","全球最大的笑话发布中心，笑话 - 糗事 - 雷事 - 囧事- 星级笑话 ,让你每日笑不停 合作联系QQ2894247217","全球最大的笑话发布中心，笑话 - 糗事 - 雷事 - 囧事- 星级笑话 ,让你每日笑不停 合作联系QQ2894247217","全球最大的笑话发布中心，笑话 - 糗事 - 雷事 - 囧事- 星级笑话 ,让你每日笑不停 合作联系QQ2894247217","全球最大的笑话发布中心，笑话 - 糗事 - 雷事 - 囧事- 星级笑话 ,让你每日笑不停 合作联系QQ2894247217","全球最大的笑话发布中心，笑话 - 糗事 - 雷事 - 囧事- 星级笑话 ,让你每日笑不停 合作联系QQ2894247217"]
-        return strArray
-    }()
     private var dataArray: [WZHomeModel]?
     
     
@@ -35,6 +31,15 @@ class WZHomeViewController: UIViewController,UITableViewDelegate,UITableViewData
         tableView?.snp.makeConstraints({ (make) in
             make.left.right.bottom.top.equalTo(self.view!)
         })
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(WZHomeViewController.PushBrowseImageVC), name: NSNotification.Name(rawValue: "PushBrowseImageVC"), object: nil)
+    }
+    
+    func PushBrowseImageVC(notification: Notification) {
+        print(notification)
+        let browseImageVC = WZBrowseImageViewController()
+        browseImageVC.imageArray = notification.object as? [[String:Any]]
+        self.present(browseImageVC, animated: true, completion: nil)
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -66,12 +71,7 @@ class WZHomeViewController: UIViewController,UITableViewDelegate,UITableViewData
             }
             self.dataArray = tempArray
             self.tableView?.reloadData()
-            
-//            let time: TimeInterval = 3.0
-//            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + time) {
-//                //code
-//                self.tableView?.reloadData()
-//            }
+
         }) { (error) in
             print(error)
         }

@@ -43,6 +43,11 @@ class WZPicCollectionView: UICollectionView,UICollectionViewDelegate,UICollectio
         fatalError("init(coder:) has not been implemented")
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        NotificationCenter.default.post(name: Notification.Name(rawValue: "PushBrowseImageVC"), object: picArray)
+    }
+    
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
