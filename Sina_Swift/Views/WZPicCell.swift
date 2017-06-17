@@ -30,8 +30,9 @@ class WZPicCell: UICollectionViewCell {
     
     private func addChildViews() {
         image = UIImageView()
-        image?.contentMode = .redraw
+        image?.contentMode = .scaleAspectFill
         self.contentView.addSubview(image!)
+        self.clipsToBounds = true
     }
     
     private func addChildLayouts() {

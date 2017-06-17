@@ -33,7 +33,7 @@ class WZPicCollectionView: UICollectionView,UICollectionViewDelegate,UICollectio
         flowLayout?.minimumLineSpacing = margin
         flowLayout?.minimumInteritemSpacing = margin
         super.init(frame: frame, collectionViewLayout: flowLayout!)
-        self.backgroundColor = UIColor.white
+        self.isScrollEnabled = false
         self.delegate = self
         self.dataSource = self
         self.register(WZPicCell.classForCoder(), forCellWithReuseIdentifier: WZPicCollectionView.identifier)

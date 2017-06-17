@@ -78,7 +78,29 @@ class BYNetRequest: NSObject {
                 
             }
         }
-
+    }
+    
+    /**
+     * 查看token是否过期
+     * access_Token
+     */
+    public func lookAccessTokenOld(access_token: String, SuccessBlock:@escaping ((_ success : [String : Any])-> Void), ErrorBlock:@escaping ((_ error : HTTPURLResponse)->Void)) {
+        
+        let paramter = ["access_token" : access_token];
+        
+        Alamofire.request("https://api.weibo.com/oauth2/get_token_info", method: .post, parameters: paramter).responseJSON { response in
+            if let JSON = response.result.value {
+                let a = JSON as? [String: Any]
+                SuccessBlock(a!)
+            } else {
+                BYLoadingTool.shared.showText(str: "网络请求超时", currentView: ((UIApplication.shared.delegate?.window)!)!)
+                if let error = response.response {
+                    ErrorBlock(error)
+                }
+                
+            }
+        }
+        
         
     }
     

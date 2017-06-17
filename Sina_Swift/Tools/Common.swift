@@ -26,6 +26,8 @@ let REDIRECT_URL = "http://www.baidu.com"
 let APP_SECRET = "f30501fded29138e7fc79d21c394feea"
 
 
+
+
 //颜色
 let LINECOLOR = UIColor.colorWithHexString(hex: "e0e0e0")
 let BACKGROUNDCOLOR = UIColor.colorWithHexString(hex: "f0f0f0")

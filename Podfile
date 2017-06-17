@@ -9,6 +9,7 @@ target 'Sina_Swift' do
   pod 'Alamofire'
   pod 'MBProgressHUD'
   pod 'Kingfisher'
+  pod 'MJRefresh'
 
   # Pods for Sina_Swift
 

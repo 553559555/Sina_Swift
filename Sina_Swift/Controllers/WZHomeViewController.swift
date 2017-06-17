@@ -7,12 +7,13 @@
 //
 
 import UIKit
+import MJRefresh
 
 class WZHomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
     
     private var page: Int?
     private var tableView: UITableView?
-    private var dataArray: [WZHomeModel]?
+    private var dataArray = [WZHomeModel]()
     
     
     static let identifier = "tableViewCell"
@@ -22,17 +23,9 @@ class WZHomeViewController: UIViewController,UITableViewDelegate,UITableViewData
         view.backgroundColor = UIColor.white
         initNav()
         page = 0
-        getListData()
-        tableView = UITableView()
-        tableView?.delegate = self
-        tableView?.dataSource = self
-        view.addSubview(tableView!)
-        tableView?.register(WZTableViewCell.classForCoder(), forCellReuseIdentifier: WZHomeViewController.identifier)
-        tableView?.snp.makeConstraints({ (make) in
-            make.left.right.bottom.top.equalTo(self.view!)
-        })
+        addChildViews()
+        self.getNewData()
         
-        NotificationCenter.default.addObserver(self, selector: #selector(WZHomeViewController.PushBrowseImageVC), name: NSNotification.Name(rawValue: "PushBrowseImageVC"), object: nil)
     }
     
     func PushBrowseImageVC(notification: Notification) {
@@ -44,24 +37,44 @@ class WZHomeViewController: UIViewController,UITableViewDelegate,UITableViewData
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         let cell = tableView.dequeueReusableCell(withIdentifier: WZHomeViewController.identifier) as? WZTableViewCell
-        let textHeight = cell?.heightWithModel(model: (self.dataArray?[indexPath.row])!)
+        let textHeight = cell?.heightWithModel(model: (self.dataArray[indexPath.row]))
         return 120 * HEIGHT_RATIO + textHeight!
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return (self.dataArray?.count != nil) ? (self.dataArray?.count)! : 0
+        return self.dataArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = WZTableViewCell()
-        cell.model = self.dataArray?[indexPath.row]
+        cell.model = self.dataArray[indexPath.row]
         return cell
         
     }
     
-    private func getListData() {
+    @objc private func getNewData() {
+        page = 1
+        BYNetRequest.shared.getNewList(access_token: WZUserAcessToken.shared.acessToken!, page: page!, SuccessBlock: { (dict) in
+            self.dataArray.removeAll()
+            let array = dict["statuses"] as? [[String : Any]]
+            var tempArray = [WZHomeModel]()
+            for (_,value) in (array?.enumerated())! {
+                let model = WZHomeModel(dict: value)
+                tempArray.append(model)
+            }
+            self.dataArray += tempArray
+            self.tableView?.mj_header.endRefreshing()
+            self.tableView?.reloadData()
+            
+        }) { (error) in
+            print(error)
+        }
+    }
+    
+    @objc private func getListData() {
         page = page! + 1
+        
         BYNetRequest.shared.getNewList(access_token: WZUserAcessToken.shared.acessToken!, page: page!, SuccessBlock: { (dict) in
             let array = dict["statuses"] as? [[String : Any]]
             var tempArray = [WZHomeModel]()
@@ -69,12 +82,27 @@ class WZHomeViewController: UIViewController,UITableViewDelegate,UITableViewData
                 let model = WZHomeModel(dict: value)
                 tempArray.append(model)
             }
-            self.dataArray = tempArray
+            self.dataArray += tempArray
+            self.tableView?.mj_footer.endRefreshing()
             self.tableView?.reloadData()
 
         }) { (error) in
             print(error)
         }
+    }
+    
+    private func addChildViews() {
+        tableView = UITableView()
+        tableView?.delegate = self
+        tableView?.dataSource = self
+        view.addSubview(tableView!)
+        tableView?.register(WZTableViewCell.classForCoder(), forCellReuseIdentifier: WZHomeViewController.identifier)
+        tableView?.snp.makeConstraints({ (make) in
+            make.left.right.bottom.top.equalTo(self.view!)
+        })
+        tableView?.mj_header = MJRefreshNormalHeader(refreshingTarget: self, refreshingAction: #selector(WZHomeViewController.getNewData))
+        tableView?.mj_footer = MJRefreshAutoNormalFooter(refreshingTarget: self, refreshingAction: #selector(WZHomeViewController.getListData))
+        NotificationCenter.default.addObserver(self, selector: #selector(WZHomeViewController.PushBrowseImageVC), name: NSNotification.Name(rawValue: "PushBrowseImageVC"), object: nil)
     }
     
     private func initNav() {

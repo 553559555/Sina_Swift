@@ -62,6 +62,7 @@ class WZTransmitView: UIView {
         flowLayout?.minimumLineSpacing = margin
         flowLayout?.minimumInteritemSpacing = margin
         picView = WZPicCollectionView(frame: .zero, collectionViewLayout: flowLayout!)
+        picView?.backgroundColor = UIColor.colorWithHexString(hex: "e0e0e0")
         addSubview(picView!)
     }
     
