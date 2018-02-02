@@ -54,7 +54,7 @@ class WZHomeViewController: UIViewController,UITableViewDelegate,UITableViewData
     }
     
     @objc private func getNewData() {
-        page = 1
+        page = 1;
         BYNetRequest.shared.getNewList(access_token: WZUserAcessToken.shared.acessToken!, page: page!, SuccessBlock: { (dict) in
             self.dataArray.removeAll()
             let array = dict["statuses"] as? [[String : Any]]
@@ -63,18 +63,20 @@ class WZHomeViewController: UIViewController,UITableViewDelegate,UITableViewData
                 let model = WZHomeModel(dict: value)
                 tempArray.append(model)
             }
+            print("tempArray = %tu", tempArray.count);
+            print("dataArray = %tu", self.dataArray.count);
             self.dataArray += tempArray
-            self.tableView?.mj_header.endRefreshing()
+            print("dataArray = %tu", self.dataArray.count);
             self.tableView?.reloadData()
-            
+            self.tableView?.mj_header.endRefreshing()
         }) { (error) in
             print(error)
+            
         }
     }
     
     @objc private func getListData() {
         page = page! + 1
-        
         BYNetRequest.shared.getNewList(access_token: WZUserAcessToken.shared.acessToken!, page: page!, SuccessBlock: { (dict) in
             let array = dict["statuses"] as? [[String : Any]]
             var tempArray = [WZHomeModel]()
@@ -82,12 +84,16 @@ class WZHomeViewController: UIViewController,UITableViewDelegate,UITableViewData
                 let model = WZHomeModel(dict: value)
                 tempArray.append(model)
             }
+            print("tempArray = %tu", tempArray.count);
+            print("dataArray = %tu", self.dataArray.count);
             self.dataArray += tempArray
-            self.tableView?.mj_footer.endRefreshing()
+            print("dataArray = %tu", self.dataArray.count);
             self.tableView?.reloadData()
+            self.tableView?.mj_footer.endRefreshing()
 
         }) { (error) in
             print(error)
+            self.page = self.page! - 1
         }
     }
     
@@ -95,11 +101,19 @@ class WZHomeViewController: UIViewController,UITableViewDelegate,UITableViewData
         tableView = UITableView()
         tableView?.delegate = self
         tableView?.dataSource = self
+        tableView?.estimatedRowHeight = 0;
+        tableView?.estimatedSectionHeaderHeight = 0;
+        tableView?.estimatedSectionFooterHeight = 0;
         view.addSubview(tableView!)
         tableView?.register(WZTableViewCell.classForCoder(), forCellReuseIdentifier: WZHomeViewController.identifier)
         tableView?.snp.makeConstraints({ (make) in
             make.left.right.bottom.top.equalTo(self.view!)
         })
+        if #available(iOS 11.0, *) {
+            tableView?.contentInsetAdjustmentBehavior = .never
+            tableView?.contentInset = UIEdgeInsetsMake(CGFloat(NAVIGATION_HEIGHT), 0, 0, 0)
+            tableView?.scrollIndicatorInsets = (tableView?.contentInset)!
+        }
         tableView?.mj_header = MJRefreshNormalHeader(refreshingTarget: self, refreshingAction: #selector(WZHomeViewController.getNewData))
         tableView?.mj_footer = MJRefreshAutoNormalFooter(refreshingTarget: self, refreshingAction: #selector(WZHomeViewController.getListData))
         NotificationCenter.default.addObserver(self, selector: #selector(WZHomeViewController.PushBrowseImageVC), name: NSNotification.Name(rawValue: "PushBrowseImageVC"), object: nil)

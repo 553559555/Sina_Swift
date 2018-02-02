@@ -23,6 +23,7 @@ class WZUserInfoView: UIView {
             name?.text = model?.name
             icon?.kf.setImage(with: URL(string: (model?.icon)!), placeholder: #imageLiteral(resourceName: "defult"), options: nil, progressBlock: nil, completionHandler: nil)
             time?.text = model?.time
+//            from?.text = model?.from
             text?.text = model?.text
         }
     }

@@ -23,7 +23,6 @@ class WZBrowseImageViewController: UIViewController, UIScrollViewDelegate {
     
     private func addChildViews() {
         let tap = UITapGestureRecognizer(target: self, action: #selector(WZBrowseImageViewController.dismissCurrentVC))
-        
         scrollView = UIScrollView()
         scrollView?.delegate = self
         scrollView?.isPagingEnabled = true
