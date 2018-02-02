@@ -69,7 +69,12 @@ class BYNetRequest: NSObject {
         Alamofire.request(GET_NEW_LAST, method: .get, parameters: paramter).responseJSON { response in
             if let JSON = response.result.value {
                 let a = JSON as? [String: Any]
-                SuccessBlock(a!)
+                if (a!["statuses"] != nil) {
+                    SuccessBlock(a!)
+                } else {
+                    BYLoadingTool.shared.showText(str: "网络请求超时", currentView: ((UIApplication.shared.delegate?.window)!)!)
+                    ErrorBlock(response.response!)
+                }
             } else {
                 BYLoadingTool.shared.showText(str: "网络请求超时", currentView: ((UIApplication.shared.delegate?.window)!)!)
                 if let error = response.response {
