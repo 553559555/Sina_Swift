@@ -10,6 +10,7 @@ import UIKit
 import Alamofire
 import MBProgressHUD
 
+
 class BYNetRequest: NSObject {
     
     static let shared = BYNetRequest()
