@@ -14,7 +14,6 @@ class WZLoginViewController: UIViewController,UIWebViewDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         view.backgroundColor = UIColor.white
         addChildViews()
         initNav()

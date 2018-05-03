@@ -17,25 +17,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         window = UIWindow()
-        if (UserDefaults.standard.object(forKey: "access_token") != nil) {
-            BYNetRequest.shared.lookAccessTokenOld(access_token: (UserDefaults.standard.object(forKey: "access_token") as? String)!, SuccessBlock: { (dict) in
-                if dict["error"] != nil {
-                    self.window?.rootViewController = UINavigationController(rootViewController: WZLoginViewController());
-                } else {
-                    let dict = ["access_token" : UserDefaults.standard.object(forKey: "access_token"),
-                                "expires_in"   : UserDefaults.standard.object(forKey: "expires_in"),
-                                "remind_in"    : UserDefaults.standard.object(forKey: "remind_in"),
-                                "uid"          : UserDefaults.standard.object(forKey: "uid")]
-                    WZUserAcessToken.shared.saveInfo(dict: dict)
-                    self.window?.rootViewController = UINavigationController(rootViewController: WZHomeViewController());
-                }
-            }) { (error) in
-                print(error)
-            }
-            window?.rootViewController = WZViewController()
-        } else {
-            window?.rootViewController = UINavigationController(rootViewController: WZLoginViewController());
-        }
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let mainViewController = storyboard.instantiateInitialViewController()
+        window?.rootViewController = UINavigationController(rootViewController: mainViewController!)
         window?.makeKeyAndVisible()
         return true
     }

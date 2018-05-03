@@ -46,11 +46,10 @@ class WZHomeViewController: UIViewController,UITableViewDelegate,UITableViewData
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
         let cell = WZTableViewCell()
         cell.model = self.dataArray[indexPath.row]
+        cell.selectionStyle = .none
         return cell
-        
     }
     
     @objc private func getNewData() {
@@ -63,10 +62,7 @@ class WZHomeViewController: UIViewController,UITableViewDelegate,UITableViewData
                 let model = WZHomeModel(dict: value)
                 tempArray.append(model)
             }
-            print("tempArray = %tu", tempArray.count);
-            print("dataArray = %tu", self.dataArray.count);
             self.dataArray += tempArray
-            print("dataArray = %tu", self.dataArray.count);
             self.tableView?.reloadData()
             self.tableView?.mj_header.endRefreshing()
         }) { (error) in
@@ -84,10 +80,7 @@ class WZHomeViewController: UIViewController,UITableViewDelegate,UITableViewData
                 let model = WZHomeModel(dict: value)
                 tempArray.append(model)
             }
-            print("tempArray = %tu", tempArray.count);
-            print("dataArray = %tu", self.dataArray.count);
             self.dataArray += tempArray
-            print("dataArray = %tu", self.dataArray.count);
             self.tableView?.reloadData()
             self.tableView?.mj_footer.endRefreshing()
 
@@ -120,7 +113,7 @@ class WZHomeViewController: UIViewController,UITableViewDelegate,UITableViewData
     }
     
     private func initNav() {
-        self.title = "首页"
+        self.title = "微博列表"
     }
     
     override func didReceiveMemoryWarning() {
