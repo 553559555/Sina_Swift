@@ -12,7 +12,7 @@ class WZMainViewController: UIViewController, UITableViewDelegate, UITableViewDa
 
     @IBOutlet weak var tableView: UITableView!
     
-    let array: Array<String> = ["微博列表","相机","动画"]
+    let array: Array<String> = ["微博列表","渐变色","动画"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -59,6 +59,8 @@ class WZMainViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 self.navigationController?.pushViewController(WZLoginViewController(), animated: true)
                 BYLoadingTool.shared.hideHud()
             }
+        case 1:
+            navigationController?.pushViewController(WZGradientColorViewController(), animated: true)
         default:
             print("没有找到方法")
         }
