@@ -12,7 +12,7 @@ class WZMainViewController: UIViewController, UITableViewDelegate, UITableViewDa
 
     @IBOutlet weak var tableView: UITableView!
     
-    let array: Array<String> = ["微博列表","渐变色","动画"]
+    let array: Array<String> = ["微博列表","渐变色","测试cell刷新"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,6 +20,7 @@ class WZMainViewController: UIViewController, UITableViewDelegate, UITableViewDa
         self.view.backgroundColor = UIColor.white
         tableView.separatorStyle = .none
         tableView.rowHeight = 50
+        
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -43,10 +44,11 @@ class WZMainViewController: UIViewController, UITableViewDelegate, UITableViewDa
                         self.navigationController?.pushViewController(WZLoginViewController(), animated: true)
                         BYLoadingTool.shared.hideHud()
                     } else {
-                        let dict = ["access_token" : UserDefaults.standard.object(forKey: "access_token"),
-                                    "expires_in"   : UserDefaults.standard.object(forKey: "expires_in"),
-                                    "remind_in"    : UserDefaults.standard.object(forKey: "remind_in"),
-                                    "uid"          : UserDefaults.standard.object(forKey: "uid")]
+                        let dict:[String : Any] = [   "access_token" : UserDefaults.standard.object(forKey: "access_token") ?? "",
+                                                      "expires_in"   : UserDefaults.standard.object(forKey: "expires_in") ?? "",
+                                                      "remind_in"    : UserDefaults.standard.object(forKey: "remind_in") ?? "",
+                                                      "uid"          : UserDefaults.standard.object(forKey: "uid") ?? ""
+                                                   ]
                         WZUserAcessToken.shared.saveInfo(dict: dict)
                         self.navigationController?.pushViewController(WZHomeViewController(), animated: true)
                         BYLoadingTool.shared.hideHud()
@@ -61,6 +63,8 @@ class WZMainViewController: UIViewController, UITableViewDelegate, UITableViewDa
             }
         case 1:
             navigationController?.pushViewController(WZGradientColorViewController(), animated: true)
+        case 2:
+            navigationController?.pushViewController(WZTestCellReloadViewController(), animated: true)
         default:
             print("没有找到方法")
         }

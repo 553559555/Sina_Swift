@@ -9,11 +9,9 @@
 import UIKit
 
 class WZGradientColorView: UIView {
-
     override open class var layerClass: Swift.AnyClass {
         return HueGradientColorLayer.self
     }
-
 }
 
 class HueGradientColorLayer: CAGradientLayer {
@@ -35,7 +33,7 @@ class HueGradientColorLayer: CAGradientLayer {
         colors = controns.map {
             UIColor(hue: $0, saturation: 1, brightness: 1, alpha: 1).cgColor
         }
-        startPoint = CGPoint(x: 0, y: 0.5)
-        endPoint = CGPoint(x: 1, y: 0.5)
+        startPoint = CGPoint(x: 0.5, y: 0)
+        endPoint = CGPoint(x: 0.5, y: 1)
     }
 }

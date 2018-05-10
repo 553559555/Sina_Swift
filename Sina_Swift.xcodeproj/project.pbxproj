@@ -30,6 +30,8 @@
 		76B5DA321EEFE406003DA2DF /* WZBrowseImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76B5DA311EEFE406003DA2DF /* WZBrowseImageViewController.swift */; };
 		76B5DA3D1EF11B02003DA2DF /* WZMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76B5DA3C1EF11B02003DA2DF /* WZMainViewController.swift */; };
 		76B5DA451EF28BBE003DA2DF /* Sina_SwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76B5DA441EF28BBE003DA2DF /* Sina_SwiftTests.swift */; };
+		B422133520A2A39900C41D66 /* WZTestCellReloadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B422133420A2A39900C41D66 /* WZTestCellReloadViewController.swift */; };
+		B422133720A2A4C600C41D66 /* WZTestCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B422133620A2A4C600C41D66 /* WZTestCell.swift */; };
 		B4B5A5B1209C0F0300655A17 /* WZGradientColorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B5A5B0209C0F0300655A17 /* WZGradientColorViewController.swift */; };
 		B4B5A5B3209C0F1E00655A17 /* WZGradientColorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B5A5B2209C0F1E00655A17 /* WZGradientColorView.swift */; };
 /* End PBXBuildFile section */
@@ -75,6 +77,8 @@
 		76B5DA461EF28BBE003DA2DF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		988CDEC6DBF92BEBE7EC726F /* Pods_Sina_Swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Sina_Swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9C7616B93C66E20A143B91F /* Pods-Sina_Swift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sina_Swift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Sina_Swift/Pods-Sina_Swift.debug.xcconfig"; sourceTree = "<group>"; };
+		B422133420A2A39900C41D66 /* WZTestCellReloadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WZTestCellReloadViewController.swift; sourceTree = "<group>"; };
+		B422133620A2A4C600C41D66 /* WZTestCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WZTestCell.swift; sourceTree = "<group>"; };
 		B4B5A5B0209C0F0300655A17 /* WZGradientColorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WZGradientColorViewController.swift; sourceTree = "<group>"; };
 		B4B5A5B2209C0F1E00655A17 /* WZGradientColorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WZGradientColorView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -121,17 +125,11 @@
 		761764991EE93E5D00BA2CEF /* Sina_Swift */ = {
 			isa = PBXGroup;
 			children = (
-				761764BC1EE94B6D00BA2CEF /* Controllers */,
-				761764BD1EE94B6D00BA2CEF /* Models */,
-				761764BE1EE94B6D00BA2CEF /* Views */,
+				761764BC1EE94B6D00BA2CEF /* Main */,
 				761764AF1EE94B2000BA2CEF /* Tools */,
-				7617649A1EE93E5D00BA2CEF /* AppDelegate.swift */,
-				7617649E1EE93E5D00BA2CEF /* Main.storyboard */,
-				761764A41EE93E5D00BA2CEF /* Assets.xcassets */,
-				761764A61EE93E5D00BA2CEF /* LaunchScreen.storyboard */,
-				761764A91EE93E5D00BA2CEF /* Info.plist */,
-				761764A11EE93E5D00BA2CEF /* Sina_Swift.xcdatamodeld */,
+				B422133D20A2A8B500C41D66 /* Supporting Files */,
 				76B5DA381EF0E3E0003DA2DF /* Header.h */,
+				761764A91EE93E5D00BA2CEF /* Info.plist */,
 			);
 			path = Sina_Swift;
 			sourceTree = "<group>";
@@ -149,20 +147,21 @@
 			path = Tools;
 			sourceTree = "<group>";
 		};
-		761764BC1EE94B6D00BA2CEF /* Controllers */ = {
+		761764BC1EE94B6D00BA2CEF /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				B422133320A2A35400C41D66 /* cell刷新测试 */,
 				B4B5A5AF209C0ECD00655A17 /* 渐变色 */,
 				B4FC11B5209AEA7F00EB96FB /* 微博 */,
 				76B5DA3C1EF11B02003DA2DF /* WZMainViewController.swift */,
 			);
-			path = Controllers;
+			path = Main;
 			sourceTree = "<group>";
 		};
 		761764BD1EE94B6D00BA2CEF /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				B4FC11B6209AEAB000EB96FB /* 微博 */,
+				76B5DA291EEE9255003DA2DF /* WZHomeModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -170,8 +169,11 @@
 		761764BE1EE94B6D00BA2CEF /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				B4B5A5B4209C0F2300655A17 /* 渐变色 */,
-				B4FC11B7209AEABA00EB96FB /* 微博 */,
+				76B464C71EEAA077007EC53E /* WZUserInfoView.swift */,
+				76B5DA271EEE6B23003DA2DF /* WZTableViewCell.swift */,
+				76B5DA2B1EEF7CDB003DA2DF /* WZPicCollectionView.swift */,
+				76B5DA2D1EEF9B99003DA2DF /* WZPicCell.swift */,
+				76B5DA2F1EEFB970003DA2DF /* WZTransmitView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -194,18 +196,74 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		B4B5A5AF209C0ECD00655A17 /* 渐变色 */ = {
+		B422133320A2A35400C41D66 /* cell刷新测试 */ = {
+			isa = PBXGroup;
+			children = (
+				B422133C20A2A88200C41D66 /* Controllers */,
+				B422133B20A2A88000C41D66 /* Views */,
+			);
+			path = "cell刷新测试";
+			sourceTree = "<group>";
+		};
+		B422133820A2A84900C41D66 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				761764BF1EE94B9600BA2CEF /* WZLoginViewController.swift */,
+				761764C11EE951E900BA2CEF /* WZHomeViewController.swift */,
+				76B5DA311EEFE406003DA2DF /* WZBrowseImageViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		B422133920A2A86400C41D66 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B4B5A5B2209C0F1E00655A17 /* WZGradientColorView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		B422133A20A2A86600C41D66 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
 				B4B5A5B0209C0F0300655A17 /* WZGradientColorViewController.swift */,
 			);
-			path = "渐变色";
+			path = Controllers;
 			sourceTree = "<group>";
 		};
-		B4B5A5B4209C0F2300655A17 /* 渐变色 */ = {
+		B422133B20A2A88000C41D66 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				B4B5A5B2209C0F1E00655A17 /* WZGradientColorView.swift */,
+				B422133620A2A4C600C41D66 /* WZTestCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		B422133C20A2A88200C41D66 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				B422133420A2A39900C41D66 /* WZTestCellReloadViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		B422133D20A2A8B500C41D66 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				7617649A1EE93E5D00BA2CEF /* AppDelegate.swift */,
+				7617649E1EE93E5D00BA2CEF /* Main.storyboard */,
+				761764A41EE93E5D00BA2CEF /* Assets.xcassets */,
+				761764A61EE93E5D00BA2CEF /* LaunchScreen.storyboard */,
+				761764A11EE93E5D00BA2CEF /* Sina_Swift.xcdatamodeld */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B4B5A5AF209C0ECD00655A17 /* 渐变色 */ = {
+			isa = PBXGroup;
+			children = (
+				B422133A20A2A86600C41D66 /* Controllers */,
+				B422133920A2A86400C41D66 /* Views */,
 			);
 			path = "渐变色";
 			sourceTree = "<group>";
@@ -213,29 +271,9 @@
 		B4FC11B5209AEA7F00EB96FB /* 微博 */ = {
 			isa = PBXGroup;
 			children = (
-				761764BF1EE94B9600BA2CEF /* WZLoginViewController.swift */,
-				761764C11EE951E900BA2CEF /* WZHomeViewController.swift */,
-				76B5DA311EEFE406003DA2DF /* WZBrowseImageViewController.swift */,
-			);
-			path = "微博";
-			sourceTree = "<group>";
-		};
-		B4FC11B6209AEAB000EB96FB /* 微博 */ = {
-			isa = PBXGroup;
-			children = (
-				76B5DA291EEE9255003DA2DF /* WZHomeModel.swift */,
-			);
-			path = "微博";
-			sourceTree = "<group>";
-		};
-		B4FC11B7209AEABA00EB96FB /* 微博 */ = {
-			isa = PBXGroup;
-			children = (
-				76B464C71EEAA077007EC53E /* WZUserInfoView.swift */,
-				76B5DA271EEE6B23003DA2DF /* WZTableViewCell.swift */,
-				76B5DA2B1EEF7CDB003DA2DF /* WZPicCollectionView.swift */,
-				76B5DA2D1EEF9B99003DA2DF /* WZPicCell.swift */,
-				76B5DA2F1EEFB970003DA2DF /* WZTransmitView.swift */,
+				B422133820A2A84900C41D66 /* Controllers */,
+				761764BE1EE94B6D00BA2CEF /* Views */,
+				761764BD1EE94B6D00BA2CEF /* Models */,
 			);
 			path = "微博";
 			sourceTree = "<group>";
@@ -412,6 +450,7 @@
 				76B5DA3D1EF11B02003DA2DF /* WZMainViewController.swift in Sources */,
 				761764C21EE951E900BA2CEF /* WZHomeViewController.swift in Sources */,
 				761764B71EE94B2000BA2CEF /* BYNetRequest.swift in Sources */,
+				B422133520A2A39900C41D66 /* WZTestCellReloadViewController.swift in Sources */,
 				761764C01EE94B9600BA2CEF /* WZLoginViewController.swift in Sources */,
 				761764B61EE94B2000BA2CEF /* BYLoadingTool.swift in Sources */,
 				761764BB1EE94B2000BA2CEF /* Common.swift in Sources */,
@@ -425,6 +464,7 @@
 				761764BA1EE94B2000BA2CEF /* Category.swift in Sources */,
 				76B5DA301EEFB970003DA2DF /* WZTransmitView.swift in Sources */,
 				761764C41EE9543100BA2CEF /* WZUserAcessToken.swift in Sources */,
+				B422133720A2A4C600C41D66 /* WZTestCell.swift in Sources */,
 				76B464C81EEAA077007EC53E /* WZUserInfoView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
