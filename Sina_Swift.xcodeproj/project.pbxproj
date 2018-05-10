@@ -30,6 +30,7 @@
 		76B5DA321EEFE406003DA2DF /* WZBrowseImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76B5DA311EEFE406003DA2DF /* WZBrowseImageViewController.swift */; };
 		76B5DA3D1EF11B02003DA2DF /* WZMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76B5DA3C1EF11B02003DA2DF /* WZMainViewController.swift */; };
 		76B5DA451EF28BBE003DA2DF /* Sina_SwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76B5DA441EF28BBE003DA2DF /* Sina_SwiftTests.swift */; };
+		B416EC6920A437A5009D5037 /* WZToolViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B416EC6820A437A5009D5037 /* WZToolViewCell.swift */; };
 		B422133520A2A39900C41D66 /* WZTestCellReloadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B422133420A2A39900C41D66 /* WZTestCellReloadViewController.swift */; };
 		B422133720A2A4C600C41D66 /* WZTestCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B422133620A2A4C600C41D66 /* WZTestCell.swift */; };
 		B4B5A5B1209C0F0300655A17 /* WZGradientColorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B5A5B0209C0F0300655A17 /* WZGradientColorViewController.swift */; };
@@ -77,6 +78,7 @@
 		76B5DA461EF28BBE003DA2DF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		988CDEC6DBF92BEBE7EC726F /* Pods_Sina_Swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Sina_Swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9C7616B93C66E20A143B91F /* Pods-Sina_Swift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sina_Swift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Sina_Swift/Pods-Sina_Swift.debug.xcconfig"; sourceTree = "<group>"; };
+		B416EC6820A437A5009D5037 /* WZToolViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WZToolViewCell.swift; sourceTree = "<group>"; };
 		B422133420A2A39900C41D66 /* WZTestCellReloadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WZTestCellReloadViewController.swift; sourceTree = "<group>"; };
 		B422133620A2A4C600C41D66 /* WZTestCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WZTestCell.swift; sourceTree = "<group>"; };
 		B4B5A5B0209C0F0300655A17 /* WZGradientColorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WZGradientColorViewController.swift; sourceTree = "<group>"; };
@@ -174,6 +176,7 @@
 				76B5DA2B1EEF7CDB003DA2DF /* WZPicCollectionView.swift */,
 				76B5DA2D1EEF9B99003DA2DF /* WZPicCell.swift */,
 				76B5DA2F1EEFB970003DA2DF /* WZTransmitView.swift */,
+				B416EC6820A437A5009D5037 /* WZToolViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -453,6 +456,7 @@
 				B422133520A2A39900C41D66 /* WZTestCellReloadViewController.swift in Sources */,
 				761764C01EE94B9600BA2CEF /* WZLoginViewController.swift in Sources */,
 				761764B61EE94B2000BA2CEF /* BYLoadingTool.swift in Sources */,
+				B416EC6920A437A5009D5037 /* WZToolViewCell.swift in Sources */,
 				761764BB1EE94B2000BA2CEF /* Common.swift in Sources */,
 				7617649B1EE93E5D00BA2CEF /* AppDelegate.swift in Sources */,
 				76B5DA2A1EEE9255003DA2DF /* WZHomeModel.swift in Sources */,

@@ -44,7 +44,6 @@ class WZPicCollectionView: UICollectionView,UICollectionViewDelegate,UICollectio
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
         NotificationCenter.default.post(name: Notification.Name(rawValue: "PushBrowseImageVC"), object: picArray)
     }
     

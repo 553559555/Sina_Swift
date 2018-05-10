@@ -9,12 +9,11 @@
 import UIKit
 import MJRefresh
 
-class WZHomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
+class WZHomeViewController: UIViewController {
     
     private var page: Int?
     private var tableView: UITableView?
-    private var dataArray = [WZHomeModel]()
-    
+    var dataArray = [WZHomeModel]()
     
     static let identifier = "tableViewCell"
     
@@ -33,23 +32,6 @@ class WZHomeViewController: UIViewController,UITableViewDelegate,UITableViewData
         let browseImageVC = WZBrowseImageViewController()
         browseImageVC.imageArray = notification.object as? [[String:Any]]
         self.present(browseImageVC, animated: true, completion: nil)
-    }
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        let cell = tableView.dequeueReusableCell(withIdentifier: WZHomeViewController.identifier) as? WZTableViewCell
-        let textHeight = cell?.heightWithModel(model: (self.dataArray[indexPath.row]))
-        return 120 * HEIGHT_RATIO + textHeight!
-    }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.dataArray.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = WZTableViewCell()
-        cell.model = self.dataArray[indexPath.row]
-        cell.selectionStyle = .none
-        return cell
     }
     
     @objc private func getNewData() {
@@ -115,10 +97,29 @@ class WZHomeViewController: UIViewController,UITableViewDelegate,UITableViewData
     private func initNav() {
         self.title = "微博列表"
     }
+
+}
+
+extension WZHomeViewController: UITableViewDelegate {
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+}
+
+extension WZHomeViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        let cell = tableView.dequeueReusableCell(withIdentifier: WZHomeViewController.identifier) as? WZTableViewCell
+        let textHeight = cell?.heightWithModel(model: (self.dataArray[indexPath.row]))
+        return 120 * HEIGHT_RATIO + textHeight!
     }
 
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.dataArray.count
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = WZTableViewCell()
+        cell.model = self.dataArray[indexPath.row]
+        cell.selectionStyle = .none
+        return cell
+    }
+    
 }

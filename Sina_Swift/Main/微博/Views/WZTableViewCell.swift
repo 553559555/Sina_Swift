@@ -13,6 +13,7 @@ class WZTableViewCell: UITableViewCell {
     private var transmitView: WZTransmitView?
     private var userInfo : WZUserInfoView?
     private var picView : WZPicCollectionView?
+    private var toolView: WZToolViewCell!
     private var flowLayout : UICollectionViewFlowLayout?
     private var tempHeight : CGFloat?
     private let tempWidth = SCREEN_WIDTH - 30 * WIDTH_RATIO
@@ -40,6 +41,9 @@ class WZTableViewCell: UITableViewCell {
                         }
                     }
                 })
+//                toolView.snp.updateConstraints { (make) in
+//                    make.top.equalTo((transmitView?.snp.bottom)!)
+//                }
                 self.contentView.layoutIfNeeded()
                 picView?.picArray = model?.pic
             } else {
@@ -58,6 +62,9 @@ class WZTableViewCell: UITableViewCell {
                         }
                     }
                 })
+//                toolView.snp.updateConstraints { (make) in
+//                    make.top.equalTo((picView?.snp.bottom)!)
+//                }
                 self.contentView.layoutIfNeeded()
                 picView?.picArray = model?.pic
             }
@@ -87,6 +94,10 @@ class WZTableViewCell: UITableViewCell {
         
         transmitView = WZTransmitView()
         contentView.addSubview(transmitView!)
+        
+//        toolView = WZToolViewCell()
+//        contentView.addSubview(toolView)
+        
     }
     
     private func addLayoutChildViews() {
@@ -107,6 +118,11 @@ class WZTableViewCell: UITableViewCell {
             make.right.equalTo(self.contentView)
             make.height.equalTo(100 * HEIGHT_RATIO)
         })
+//        toolView.snp.makeConstraints { (make) in
+//            make.top.equalTo((picView?.snp.bottom)!)
+//            make.left.right.equalTo(contentView)
+//            make.height.equalTo(40 * HEIGHT_RATIO)
+//        }
     }
     
     func heightWithModel(model: WZHomeModel) -> CGFloat {
