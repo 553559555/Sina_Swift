@@ -141,7 +141,7 @@ class WZTableViewCell: UITableViewCell {
         let tempH = tempHeight != nil ? tempHeight : 0
         var countHeight: CGFloat = 0
         if model.isTransmit! {
-            countHeight = model.text!.boundingRect(with: CGSize(width: SCREEN_WIDTH - 30 * WIDTH_RATIO, height: CGFloat(MAXFLOAT)), options: .usesLineFragmentOrigin, attributes: [NSFontAttributeName:UIFont.systemFont(ofSize: 15)], context: nil).size.height + tempH! + 20 * HEIGHT_RATIO + model.transmitText!.boundingRect(with: CGSize(width: SCREEN_WIDTH - 30 * WIDTH_RATIO, height: CGFloat(MAXFLOAT)), options: .usesLineFragmentOrigin, attributes: [NSFontAttributeName:UIFont.systemFont(ofSize: 15)], context: nil).size.height + 25 * HEIGHT_RATIO
+            countHeight = model.text!.boundingRect(with: CGSize(width: SCREEN_WIDTH - 30 * WIDTH_RATIO, height: CGFloat(MAXFLOAT)), options: .usesLineFragmentOrigin, attributes: [NSFontAttributeName:UIFont.systemFont(ofSize: 15)], context: nil).size.height + tempH! + 20 * HEIGHT_RATIO + model.transmitText!.boundingRect(with: CGSize(width: SCREEN_WIDTH - 30 * WIDTH_RATIO, height: CGFloat(MAXFLOAT)), options: .usesLineFragmentOrigin, attributes: [NSFontAttributeName:UIFont.systemFont(ofSize: 15)], context: nil).size.height + 20 * HEIGHT_RATIO
         } else {
             countHeight = model.text!.boundingRect(with: CGSize(width: SCREEN_WIDTH - 30 * WIDTH_RATIO, height: CGFloat(MAXFLOAT)), options: .usesLineFragmentOrigin, attributes: [NSFontAttributeName:UIFont.systemFont(ofSize: 15)], context: nil).size.height + tempH! + 20 * HEIGHT_RATIO
         }

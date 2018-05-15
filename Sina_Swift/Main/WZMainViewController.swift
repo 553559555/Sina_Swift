@@ -18,7 +18,7 @@ class WZMainViewController: UIViewController, UITableViewDelegate, UITableViewDa
         super.viewDidLoad()
         self.title = "列表"
         self.view.backgroundColor = UIColor.white
-        tableView.separatorStyle = .none
+//        tableView.separatorStyle = .none
         tableView.rowHeight = 50
         
     }
@@ -29,7 +29,9 @@ class WZMainViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "sbCell")
-        cell?.textLabel?.text = array[indexPath.row]
+        if let labelName = cell?.viewWithTag(100) as? UILabel {
+            labelName.text = array[indexPath.row]
+        }
         cell?.selectionStyle = .none
         return cell!
     }

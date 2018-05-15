@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -32,21 +33,29 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="59.666666666666664"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M6I-Ee-RiY">
-                                                    <rect key="frame" x="0.0" y="59.666666666666664" width="375" height="0.0"/>
-                                                    <color key="backgroundColor" red="0.3129655116580311" green="0.3129655116580311" blue="0.3129655116580311" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="0.5" id="szH-dV-IFo"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="top" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="h28-NY-EPg">
+                                                    <rect key="frame" x="20" y="2" width="335" height="55.666666666666664"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" tag="100" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GDR-pd-fpx">
+                                                            <rect key="frame" x="0.0" y="0.0" width="41.666666666666664" height="20.333333333333332"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="desc" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kin-wh-PLD">
+                                                            <rect key="frame" x="0.0" y="35.333333333333336" width="37.333333333333336" height="20.333333333333336"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="M6I-Ee-RiY" secondAttribute="trailing" id="M1d-bX-uso"/>
-                                                <constraint firstItem="M6I-Ee-RiY" firstAttribute="leading" secondItem="4zF-Kw-wcf" secondAttribute="leading" id="aHA-SL-lVy"/>
-                                                <constraint firstAttribute="bottom" secondItem="M6I-Ee-RiY" secondAttribute="bottom" id="d9M-IT-EX5"/>
+                                                <constraint firstAttribute="bottom" secondItem="h28-NY-EPg" secondAttribute="bottom" constant="2" id="Ioc-L5-CRQ"/>
+                                                <constraint firstItem="h28-NY-EPg" firstAttribute="leading" secondItem="4zF-Kw-wcf" secondAttribute="leading" constant="20" id="LE5-8E-Jyi"/>
+                                                <constraint firstItem="h28-NY-EPg" firstAttribute="top" secondItem="4zF-Kw-wcf" secondAttribute="top" constant="2" id="QyA-Db-FLD"/>
+                                                <constraint firstAttribute="trailing" secondItem="h28-NY-EPg" secondAttribute="trailing" constant="20" id="RHw-I9-z7j"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
